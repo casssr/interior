@@ -286,7 +286,7 @@
   /* ↓↓↓ Replace this image src with the real book cover whenever it's ready ↓↓↓ */
   .cover-frame img{
     position:relative;z-index:1;
-    aspect-ratio:3/4;width:100%;object-fit:fit;
+    aspect-ratio:3/4;width:100%;object-fit:cover;
     border-radius:14px;border:1px solid var(--line);
     box-shadow:0 24px 50px -22px rgba(10,14,30,0.4);
   }
@@ -361,6 +361,94 @@
   }
 
   :focus-visible{outline:2px solid var(--mustard);outline-offset:3px;}
+
+  /* ---------- MONEY-FOCUSED PROOF COMPONENTS ---------- */
+  .eyebrow{
+    font-family:var(--sans);font-size:0.86rem;font-weight:700;
+    letter-spacing:0.08em;text-transform:uppercase;color:var(--mustard);
+    margin:0 0 16px;position:relative;z-index:1;
+  }
+  .lede-lg{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(1.9rem, 5.6vw, 2.7rem);
+    line-height:1.14;letter-spacing:-0.01em;
+    max-width:20ch;position:relative;z-index:1;
+  }
+
+  /* big number stat cards */
+  .stat-row{
+    margin-top:36px;display:grid;grid-template-columns:1fr;gap:18px;
+    position:relative;z-index:1;
+  }
+  @media(min-width:900px){.stat-row{grid-template-columns:repeat(3,1fr);}}
+  .stat-card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:20px;padding:30px 26px;
+  }
+  .stat-card .big-num{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(2.1rem,6vw,2.7rem);color:var(--mystic);line-height:1;
+  }
+  .stat-card .cap{
+    font-size:0.8rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.05em;color:var(--mustard);margin-top:12px;
+  }
+  .stat-card p{font-size:0.94rem;line-height:1.55;color:rgba(18,24,44,0.72);margin:12px 0 0;}
+
+  /* client feedback / mock chat cards */
+  .proof-grid{
+    margin-top:40px;display:grid;grid-template-columns:1fr;gap:24px;
+    position:relative;z-index:1;
+  }
+  @media(min-width:900px){.proof-grid{grid-template-columns:repeat(3,1fr);}}
+
+  .chat-card{
+    background:var(--cream);border:1px solid var(--line);
+    border-radius:20px;overflow:hidden;
+    box-shadow:0 16px 34px -20px rgba(10,14,30,0.35);
+  }
+  .chat-card .chat-head{
+    background:var(--mystic);color:var(--mustard-soft);
+    font-size:0.72rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.06em;padding:12px 16px;
+  }
+  .chat-card .chat-body{padding:18px 16px;display:flex;flex-direction:column;gap:10px;}
+  .bubble{
+    font-size:0.9rem;line-height:1.5;padding:10px 14px;
+    border-radius:14px;max-width:88%;
+  }
+  .bubble.in{
+    align-self:flex-start;background:#fff;border:1px solid var(--line);
+    border-bottom-left-radius:4px;color:var(--ink);
+  }
+  .bubble.out{
+    align-self:flex-end;background:rgba(214,165,38,0.18);
+    border-bottom-right-radius:4px;color:var(--ink);
+  }
+
+  /* bank-style balance card */
+  .balance-card{
+    background:var(--mystic);color:var(--cream);border-radius:20px;
+    padding:28px 24px;display:flex;flex-direction:column;justify-content:center;
+  }
+  .balance-card .lbl{
+    font-size:0.74rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.06em;color:rgba(246,242,235,0.6);
+  }
+  .balance-card .amt{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(1.9rem,5vw,2.4rem);color:var(--mustard-soft);
+    margin-top:10px;
+  }
+  .balance-card p{
+    font-size:0.86rem;line-height:1.5;color:rgba(246,242,235,0.72);
+    margin:14px 0 0;
+  }
+
+  .proof-note{
+    margin-top:24px;font-size:0.82rem;color:rgba(18,24,44,0.5);
+    position:relative;z-index:1;
+  }
 </style>
 </head>
 <body>
@@ -380,19 +468,19 @@
     <div class="patch patch-mystic" style="width:260px;height:260px;bottom:20px;left:-120px;"></div>
     <div class="wrap hero-grid">
       <div>
-        <p class="hero-kicker reveal">For anyone starting from zero</p>
-        <h1 class="reveal">The beginner's guide to <em>interior design</em></h1>
-        <p class="hero-sub reveal">Turn an eye for space into a skill you can sell, a service you can offer, and an income you can grow — starting from home.</p>
+        <p class="hero-kicker reveal">For aspiring interior designers</p>
+        <h1 class="reveal">Make Up To <em>₦3,000,000+</em> In Profit From Interior Design</h1>
+        <p class="hero-sub reveal">Grow your income, land massive client appointments, and become a seven-figure interior design business owner — starting from your phone, with zero experience.</p>
         <div class="btn-row reveal">
           <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">Get the guide now</a>
-          <a class="btn-ghost" href="#story">Read the story</a>
+          <a class="btn-ghost" href="#proof">See her results</a>
         </div>
       </div>
       <div class="hero-art reveal">
         <!-- Placeholder photo — swap for a real project photo whenever you like -->
         <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Warm minimalist living room">
-        <div class="stat-chip chip-1"><div class="num">100%</div><div class="lbl">Beginner friendly</div></div>
-        <div class="stat-chip chip-2"><div class="num">Home</div><div class="lbl">Where it all starts</div></div>
+        <div class="stat-chip chip-1"><div class="num">₦3M+</div><div class="lbl">In verified profit</div></div>
+        <div class="stat-chip chip-2"><div class="num">0</div><div class="lbl">Experience required to start</div></div>
       </div>
     </div>
   </section>
@@ -440,11 +528,11 @@
           <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=700&q=80" alt="Cozy styled home interior corner">
         </div>
         <div class="reveal">
-          <p class="lede">For me, that skill was interior design.</p>
-          <p class="body-text">It became a skill I used to create income, build a career, and create a better life for myself and my children. And I wasn't starting from some big office or expensive studio — I started my journey as an interior designer from home.</p>
-          <p class="body-text">Over time, I developed the skill, put it into practice, worked with clients, and turned what I knew into a source of income. I've since watched other people begin their own journey the same way.</p>
+          <p class="lede">For me, that skill was interior design — and it's made me millions.</p>
+          <p class="body-text">No laptop. No tech skills. No experience. No big office or expensive studio. I started my journey as an interior designer from home with none of that — and it went on to earn me millions of naira, build my career, and change my life and my children's lives.</p>
+          <p class="body-text">Over time, I developed the skill, put it into practice, worked with real clients, and turned what I knew into serious income. I've since taught other people how to do the exact same thing — and some of my own trainees have gone on to make even more than I did, within their first 3 months.</p>
           <div class="quote-card">
-            <p>What you need right now isn't another motivational speech. You need a skill you can learn, develop, and use to build a career.</p>
+            <p>What you need right now isn't another motivational speech. You need a skill you can learn, sell, and turn into real money — that's what I'm handing you in this guide.</p>
           </div>
         </div>
       </div>
@@ -457,10 +545,10 @@
       <div class="identity reveal">
         <p class="lede">Interior design is not just a talent. It's four things at once.</p>
         <div class="id-grid">
-          <div class="id-item"><div class="word">A skill</div><div class="desc">Something you can learn, practice, and get better at over time.</div></div>
-          <div class="id-item"><div class="word">A service</div><div class="desc">Something real people need and will pay you to provide.</div></div>
-          <div class="id-item"><div class="word">A career</div><div class="desc">A path you can build deliberately, one client at a time.</div></div>
-          <div class="id-item"><div class="word">An income</div><div class="desc">A source of money you can grow without waiting on one job.</div></div>
+          <div class="id-item"><div class="word">A skill</div><div class="desc">Something you can learn from your phone and start getting paid for.</div></div>
+          <div class="id-item"><div class="word">A service</div><div class="desc">Something real clients need — and will pay you millions of naira for.</div></div>
+          <div class="id-item"><div class="word">A career</div><div class="desc">A path to becoming a seven-figure business owner, one client at a time.</div></div>
+          <div class="id-item"><div class="word">An income</div><div class="desc">A source of money that keeps growing long after you stop job-hunting.</div></div>
         </div>
       </div>
     </div>
@@ -486,7 +574,7 @@
         </div>
         <div class="inside-row">
           <div class="inside-mark">💰</div>
-          <div><h3>Building an income</h3><p>How to turn what you know into opportunities, clients, and a sustainable income.</p></div>
+          <div><h3>Building an income</h3><p>How past students have used this exact guide to make millions of naira in their first few months.</p></div>
         </div>
       </div>
     </div>
@@ -502,11 +590,12 @@
         <div class="shadow-block"></div>
         <span class="cover-badge">New</span>
         <!-- Book cover placeholder — replace src="" below with the real cover whenever it's ready -->
-        <img src="brands2FDHNW0sf2F8ZAq66wmQ282FYC1qaECUvxLDfmbo_EAfG.avif" alt="The Beginner's Guide to Interior Design — book cover placeholder">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" alt="The Beginner's Guide to Interior Design — book cover placeholder">
       </div>
       <div class="reveal">
-        <p class="lede">Your copy, ready when you are.</p>
-        <p class="body-text">The Beginner's Guide to Interior Design walks you from the fundamentals to a real, sellable skill — written for people starting exactly where you are.</p>
+        <p class="lede">Her guide. Her results. Now yours.</p>
+        <p class="body-text">This is the exact guide behind millions of naira in interior design profit — hers, and her mentees'. Some of the people she's personally trained have gone on to earn even more than she did, within their first 3 months.</p>
+        <p class="body-text" style="color:var(--mystic);font-weight:600;">₦3M+ in verified profit · Mentees now earning even more.</p>
         <div class="btn-row" style="margin-top:26px;">
           <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">Buy now</a>
         </div>
@@ -514,13 +603,65 @@
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
+  <!-- PROOF: THE MONEY -->
+  <section id="proof" class="section-tight">
+    <div class="wrap reveal">
+      <p class="eyebrow">Real results. Real naira.</p>
+      <p class="lede-lg">This is what happens when you learn the skill properly.</p>
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="big-num">₦9,000,000+</div>
+          <div class="cap">Generated in 4 weeks</div>
+          <p>All from knowing exactly what to charge, how to pitch a client, and how to close the deal.</p>
+        </div>
+        <div class="stat-card">
+          <div class="big-num">₦12,222,750</div>
+          <div class="cap">Generated in 3 months</div>
+          <p>One skill. One clear strategy. Real client work, executed properly.</p>
+        </div>
+        <div class="stat-card">
+          <div class="big-num">1,000+</div>
+          <div class="cap">Client jobs &amp; referrals</div>
+          <p>Built almost entirely from word-of-mouth — happy clients sending more clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF: WHAT PEOPLE ARE SAYING -->
   <section class="section-tight">
     <div class="wrap reveal">
-      <p class="lede" style="margin:0;">See it in the wild</p>
-      <div class="ig-wrap">
-        <iframe src="https://www.instagram.com/p/DcvtvPwMEJw/embed" loading="lazy" allowtransparency="true"></iframe>
+      <p class="eyebrow">What people are saying</p>
+      <p class="lede-lg">Clients. Referrals. Parents in tears.</p>
+      <div class="proof-grid">
+        <!-- Placeholder mock conversation — swap for a real client screenshot -->
+        <div class="chat-card">
+          <div class="chat-head">Client feedback</div>
+          <div class="chat-body">
+            <div class="bubble in">My parents saw the living room and literally cried 😭</div>
+            <div class="bubble in">They said it looks like something from a magazine</div>
+            <div class="bubble out">Awww this made my whole week 🥹</div>
+            <div class="bubble in">I've already sent 3 people your contact</div>
+          </div>
+        </div>
+        <!-- Placeholder mock conversation — swap for a real referral screenshot -->
+        <div class="chat-card">
+          <div class="chat-head">Referrals</div>
+          <div class="chat-body">
+            <div class="bubble in">Hi, my cousin referred me — she said you did her sitting room</div>
+            <div class="bubble in">I want that same energy for my new apartment</div>
+            <div class="bubble out">Sending you my portfolio right now ✨</div>
+            <div class="bubble in">Perfect, let's start this week</div>
+          </div>
+        </div>
+        <!-- Placeholder balance mock — swap for a real account statement screenshot -->
+        <div class="balance-card">
+          <div class="lbl">Total earned this quarter</div>
+          <div class="amt">₦4,521,032</div>
+          <p>From client design jobs, consultations, and referrals — no ads, just the work.</p>
+        </div>
       </div>
+      <p class="proof-note">Conversations and figures shown are illustrative placeholders and will be replaced with real client screenshots and statements.</p>
     </div>
   </section>
 
@@ -528,8 +669,8 @@
   <section>
     <div class="wrap">
       <div class="final-cta reveal">
-        <h2>Start building <em>your skill</em> today.</h2>
-        <p class="body-text">Interior design is a skill. A service. A career. An income. Get the guide and start your own journey — from wherever you are right now.</p>
+        <h2>Your first <em>₦1,000,000</em> starts here.</h2>
+        <p class="body-text">Interior design is a skill, a service, a career and an income. Get the guide, learn the exact system, and start building your own seven-figure journey — from wherever you are right now.</p>
         <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">Get the guide now</a>
       </div>
     </div>
@@ -544,7 +685,7 @@
 </main>
 
 <div class="sticky-cta">
-  <span class="price-line">Start your journey today</span>
+  <span class="price-line">Start your ₦3M+ journey today</span>
   <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">Get the guide</a>
 </div>
 
