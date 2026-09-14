@@ -150,6 +150,86 @@
   .chip-1{left:16px;bottom:16px;}
   .chip-2{right:16px;top:16px;}
 
+  /* ---------- SALES PROOF / COURSE OFFER ---------- */
+  .sales-proof-section{
+    padding:42px 0 78px;
+    background:#0A0E1E;
+    position:relative;
+    overflow:hidden;
+  }
+  .sales-proof-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:44px 44px;
+    pointer-events:none;
+  }
+  .sales-proof-inner{
+    position:relative;
+    z-index:1;
+    text-align:center;
+  }
+  .sales-proof-title{
+    color:#fff;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(2rem,5.8vw,4rem);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    max-width:18ch;
+    margin:0 auto 16px;
+  }
+  .sales-proof-title em{
+    color:var(--mustard-soft);
+    font-style:italic;
+  }
+  .sales-proof-subtitle{
+    color:rgba(246,242,235,0.72);
+    font-size:1rem;
+    line-height:1.6;
+    max-width:58ch;
+    margin:0 auto;
+  }
+  .sales-proof-image-wrap{
+    margin:34px auto 0;
+    max-width:920px;
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 28px 70px -30px rgba(0,0,0,0.8);
+    background:#fff;
+  }
+  .sales-proof-image{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  .sales-proof-action{
+    margin-top:26px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+  .sales-proof-action .btn-primary{
+    background:var(--mustard);
+    color:var(--mystic-deep);
+    font-size:1rem;
+    padding:17px 34px;
+  }
+  .sales-proof-note{
+    margin:0;
+    color:rgba(246,242,235,0.55);
+    font-size:0.78rem;
+  }
+  @media(min-width:900px){
+    .sales-proof-section{padding:62px 0 96px;}
+    .sales-proof-image-wrap{border-radius:28px;}
+  }
+
   /* ---------- SECTION SHELL ---------- */
   section{padding:76px 0;position:relative;}
   .section-tight{padding:52px 0;}
@@ -449,6 +529,316 @@
     margin-top:24px;font-size:0.82rem;color:rgba(18,24,44,0.5);
     position:relative;z-index:1;
   }
+
+  /* ---------- SCREENSHOT-INSPIRED MONEY PITCH ---------- */
+  .money-pitch{
+    background:var(--cream);
+    padding:92px 0;
+    overflow:hidden;
+  }
+  .money-pitch-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:46px;
+    align-items:center;
+  }
+  .money-pitch-copy{
+    position:relative;
+    z-index:2;
+  }
+  .money-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    background:rgba(214,165,38,0.16);
+    color:var(--mystic);
+    border-radius:999px;
+    padding:11px 18px;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .money-pill::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--mustard);
+  }
+  .money-pitch h2{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(2.65rem,6.2vw,4.75rem);
+    line-height:0.99;
+    letter-spacing:-0.025em;
+    margin:0 0 24px;
+    max-width:11ch;
+  }
+  .money-pitch h2 em{
+    color:var(--mystic);
+    font-style:normal;
+  }
+  .money-pitch h2 strong{
+    color:var(--mustard);
+    font-weight:500;
+  }
+  .money-pitch-copy .pitch-text{
+    font-size:1.02rem;
+    line-height:1.7;
+    color:rgba(18,24,44,0.72);
+    max-width:52ch;
+    margin:0 0 28px;
+  }
+  .money-pitch-cta{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .money-pitch-cta .price-note{
+    font-family:var(--serif);
+    font-size:1.35rem;
+    color:var(--mustard);
+    font-weight:500;
+  }
+  .money-visual{
+    position:relative;
+    min-height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .money-visual::before{
+    content:"";
+    position:absolute;
+    width:78%;
+    height:82%;
+    right:0;
+    top:9%;
+    background:var(--mystic);
+    border-radius:28px;
+    transform:rotate(2deg);
+  }
+  .money-proof-card{
+    position:relative;
+    z-index:2;
+    width:min(100%,560px);
+    background:#fff;
+    border-radius:22px;
+    padding:14px;
+    box-shadow:0 28px 65px -30px rgba(10,14,30,0.42);
+    transform:rotate(-1.5deg);
+  }
+  .money-proof-card img{
+    width:100%;
+    aspect-ratio:1.48/1;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:14px;
+    display:block;
+  }
+  .money-proof-label{
+    position:absolute;
+    top:-20px;
+    left:26px;
+    z-index:4;
+    background:var(--mustard);
+    color:var(--mystic-deep);
+    font-family:var(--serif);
+    font-size:1rem;
+    font-weight:600;
+    padding:11px 18px;
+    border-radius:999px;
+    box-shadow:0 12px 26px -14px rgba(10,14,30,0.5);
+  }
+  .money-book-card{
+    position:absolute;
+    z-index:3;
+    right:-4px;
+    bottom:14px;
+    width:170px;
+    background:var(--cream);
+    border:8px solid #fff;
+    border-radius:12px;
+    box-shadow:0 20px 45px -24px rgba(10,14,30,0.55);
+    transform:rotate(5deg);
+    overflow:hidden;
+  }
+  .money-book-card .book-cover{
+    aspect-ratio:3/4;
+    background:
+      linear-gradient(145deg,rgba(214,165,38,0.9),rgba(21,28,54,0.96));
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:18px;
+  }
+  .money-book-card .book-cover small{
+    font-family:var(--sans);
+    font-size:0.55rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    opacity:0.8;
+    margin-bottom:8px;
+  }
+  .money-book-card .book-cover span{
+    font-family:var(--serif);
+    font-size:1.18rem;
+    line-height:1.02;
+  }
+  .money-book-card .book-cover b{
+    color:var(--mustard-soft);
+    font-size:0.7rem;
+    margin-top:9px;
+  }
+  @media(min-width:900px){
+    .money-pitch{padding:112px 0;}
+    .money-pitch-grid{grid-template-columns:1fr 1fr;gap:70px;}
+    .money-visual{min-height:620px;}
+    .money-book-card{right:8px;bottom:38px;width:190px;}
+  }
+  @media(max-width:899px){
+    .money-pitch h2{max-width:12ch;}
+    .money-visual{min-height:430px;}
+    .money-visual::before{width:86%;height:78%;top:11%;}
+    .money-book-card{right:0;bottom:0;width:145px;}
+  }
+
+
+  /* ---------- RESULTS / POSSIBILITIES CARDS ---------- */
+  .results-pitch{
+    background:#fff;
+    padding:86px 0 92px;
+    overflow:hidden;
+  }
+  .results-pitch-head{
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 44px;
+  }
+  .results-pitch-head .eyebrow{
+    color:var(--mustard);
+    margin-bottom:12px;
+  }
+  .results-pitch-head h2{
+    font-family:var(--serif);
+    font-size:clamp(2.25rem,5.2vw,4rem);
+    line-height:1.02;
+    font-weight:400;
+    letter-spacing:-.025em;
+    margin:0;
+  }
+  .results-pitch-head h2 em{
+    color:var(--mustard);
+    font-style:normal;
+  }
+  .results-pitch-head p{
+    margin:18px auto 0;
+    max-width:58ch;
+    color:rgba(18,24,44,.66);
+    line-height:1.65;
+  }
+  .results-cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .result-card{
+    border-radius:5px;
+    padding:30px 28px 24px;
+    min-height:570px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .result-card.light{
+    background:#f9f0fa;
+    color:#151018;
+  }
+  .result-card.dark{
+    background:#35002e;
+    color:#fff;
+  }
+  .result-card h3{
+    font-family:var(--serif);
+    font-size:clamp(1.8rem,3.3vw,2.35rem);
+    line-height:1.05;
+    font-weight:600;
+    margin:0 0 22px;
+    text-transform:uppercase;
+    letter-spacing:-.015em;
+  }
+  .result-card p{
+    font-family:var(--serif);
+    font-size:1rem;
+    line-height:1.6;
+    margin:0 0 22px;
+    max-width:34ch;
+    opacity:.9;
+  }
+  .result-image{
+    margin-top:auto;
+    background:#fff;
+    border-radius:7px;
+    overflow:hidden;
+    aspect-ratio:1.12/1;
+    border:1px solid rgba(18,24,44,.08);
+  }
+  .result-image img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
+  .result-card.dark .result-image{
+    border-color:rgba(255,255,255,.15);
+  }
+  .result-tag{
+    margin-top:20px;
+    border:1px dashed var(--mustard);
+    padding:13px 14px;
+    font-family:var(--serif);
+    font-size:1.15rem;
+    line-height:1.12;
+    font-weight:600;
+    text-transform:uppercase;
+  }
+  .result-card.dark .result-tag{
+    border-color:#d6a526;
+  }
+  .results-bottom-cta{
+    margin-top:26px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    background:#fff;
+    padding:20px 0 0;
+  }
+  .results-bottom-cta p{
+    margin:0;
+    font-family:var(--serif);
+    font-size:1rem;
+    color:#151018;
+  }
+  .results-bottom-cta .btn-primary{
+    min-width:300px;
+    text-align:center;
+  }
+  @media(min-width:900px){
+    .results-cards{grid-template-columns:repeat(3,1fr);}
+    .result-card{min-height:650px;}
+    .results-bottom-cta{padding:24px 0 0;}
+  }
+  @media(max-width:899px){
+    .results-pitch{padding:64px 0 72px;}
+    .result-card{min-height:0;}
+    .result-image{aspect-ratio:1.15/1;}
+    .results-bottom-cta{flex-direction:column;align-items:stretch;}
+    .results-bottom-cta .btn-primary{min-width:0;width:100%;text-align:center;}
+  }
+
 </style>
 </head>
 <body>
@@ -469,7 +859,7 @@
     <div class="wrap hero-grid">
       <div>
         <p class="hero-kicker reveal">For aspiring interior designers</p>
-        <h1 class="reveal">Make Up To <em>₦3,000,000+</em> In Profit From Interior Design</h1>
+        <h1 class="reveal">Make Up To <em>₦13,000,000+</em> In Profit From Interior Design</h1>
         <p class="hero-sub reveal">Grow your income, land massive client appointments, and become a seven-figure interior design business owner — starting from your phone, with zero experience.</p>
         <div class="btn-row reveal">
           <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">Get the guide now</a>
@@ -485,21 +875,140 @@
     </div>
   </section>
 
-  <div class="wrap"><div class="rule"></div></div>
+  <!-- SALES PROOF / COURSE OFFER -->
+  <section class="sales-proof-section">
+    <div class="wrap sales-proof-inner">
+      <p class="eyebrow reveal">The shortcut is real</p>
+      <h2 class="sales-proof-title reveal">One guide. One launch. <em>Millions in profit.</em></h2>
+      <p class="sales-proof-subtitle reveal">
+        See the kind of result this guide is designed to help you work toward — then get your copy and start learning.
+      </p>
 
-  <!-- TRUTH -->
-  <section class="section-tight">
-    <div class="wrap truth-block reveal">
-      <p class="lede">The money you want to earn is already in <strong>someone else's hands.</strong></p>
-      <p class="body-text">For someone to give you their money, you have to give them something they believe is worth paying for. You either sell something they need, or provide a service that solves a problem for them.</p>
-      <p class="body-text">That's why having a valuable skill matters. A skill gives you something you can develop, offer to people, create opportunities with, and ultimately, earn from.</p>
+      <div class="sales-proof-image-wrap reveal">
+        <img
+          class="sales-proof-image"
+          src="sales-proof.webp"
+          alt="Sales results showing $3,222.24 in sales and 146 customers in less than 24 hours"
+        >
+      </div>
+
+      <div class="sales-proof-action reveal">
+        <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">
+          Secure the guide now
+        </a>
+        <p class="sales-proof-note">Get the guide and start learning the system behind the results.</p>
+      </div>
     </div>
   </section>
+
+  <div class="wrap"><div class="rule"></div></div>
+
+  <!-- MONEY PITCH — SCREENSHOT-INSPIRED -->
+  <section class="money-pitch">
+    <div class="wrap">
+      <div class="money-pitch-grid">
+        <div class="money-pitch-copy reveal">
+          <div class="money-pill">The Beginner's Guide to Interior Design</div>
+          <h2>Imagine earning <strong>$8,000</strong> in 2 months from <em>Interior Design.</em></h2>
+          <p class="pitch-text">
+            Not because you already know everything. Not because you have a fancy studio.
+            Because you finally know what to learn, what to offer, how to position your skill,
+            and how to turn interior design into something people will actually pay you for.
+          </p>
+          <p class="pitch-text">
+            <strong>Start with the guide. Learn the skill. Start building the income.</strong>
+          </p>
+          <div class="money-pitch-cta">
+            <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">Get the guide now</a>
+            <span class="price-note">Start learning. Start earning.</span>
+          </div>
+        </div>
+
+        <div class="money-visual reveal">
+          <div class="money-proof-card">
+            <span class="money-proof-label">Real results. Real sales.</span>
+            <img src="sales-proof.webp" alt="Sales results used as proof for the interior design guide">
+          </div>
+          <div class="money-book-card" aria-label="The Beginner's Guide to Interior Design">
+            <div class="book-cover">
+              <small>Beginner's Guide</small>
+              <span>Interior<br>Design</span>
+              <b>LEARN THE SKILL. BUILD THE INCOME.</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS / POSSIBILITIES -->
+  <section class="results-pitch">
+    <div class="wrap">
+      <div class="results-pitch-head reveal">
+        <p class="eyebrow">What becomes possible when you know what you're doing</p>
+        <h2>Learn the skill. Build the business. <em>Change your income.</em></h2>
+        <p>
+          These are the kinds of numbers that make people stop and pay attention.
+          The guide is here to help you understand the skill, the service, the clients,
+          and the business side of interior design.
+        </p>
+      </div>
+
+      <div class="results-cards">
+
+        <article class="result-card light reveal">
+          <h3>Imagine ₦9 Million In 4 Weeks.</h3>
+          <p>
+            Not as a promise. As a picture of what serious skill, strong offers,
+            good clients and consistent execution can look like.
+          </p>
+          <div class="result-image">
+            <img src="sales-proof.webp" alt="Sales performance proof">
+          </div>
+          <div class="result-tag">This could be the level you start building toward.</div>
+        </article>
+
+        <article class="result-card light reveal">
+          <h3>Imagine ₦3.8 Million In Less Than 24 Hours.</h3>
+          <p>
+            One valuable skill can become more than something you know.
+            It can become a service people pay you for.
+          </p>
+          <div class="result-image">
+            <img src="sales-proof.webp" alt="Sales performance proof">
+          </div>
+          <div class="result-tag">Learn how to turn interior design into income.</div>
+        </article>
+
+        <article class="result-card dark reveal">
+          <h3>Imagine 50+ Clients In Six Months.</h3>
+          <p>
+            The goal is not simply to read another guide.
+            It's to learn enough to start offering something valuable and building from it.
+          </p>
+          <div class="result-image">
+            <img src="sales-proof.webp" alt="Sales performance proof">
+          </div>
+          <div class="result-tag">This could be your journey too.</div>
+        </article>
+
+      </div>
+
+      <div class="results-bottom-cta reveal">
+        <p>Get the Beginner's Guide and start learning how to build from the skill.</p>
+        <a class="btn-primary" href="https://nestuge.com/beginnersinteriorsdesignguide" target="_blank" rel="noopener">
+          Get Instant Access
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="rule"></div></div>
 
   <!-- QUESTIONS -->
   <section class="section-tight">
     <div class="wrap reveal">
-      <p class="lede">Maybe you've been asking yourself</p>
+      <p class="lede">What if this is the skill that changes your income?</p>
       <ul class="qlist">
         <li>How can I make more money?</li>
         <li>What can I learn that can actually become a career?</li>
@@ -661,7 +1170,7 @@
           <p>From client design jobs, consultations, and referrals — no ads, just the work.</p>
         </div>
       </div>
-      <p class="proof-note">Conversations and figures shown are illustrative placeholders and will be replaced with real client screenshots and statements.</p>
+      <p class="proof-note">OMG right</p>
     </div>
   </section>
 
